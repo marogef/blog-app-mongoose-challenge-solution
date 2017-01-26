@@ -11,10 +11,48 @@ Write tests for the normal case for each endpoint.
 
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-
 const {app, closeServer, runServer} = require('../server');
-
 const should = chai.should();
-
 chai.use(chaiHttp);
+var server=require('../server.js');
+var Item = requires'../models/item');
+var should = chai.should();
+var app = server.app;
 
+
+
+describe('Shopping List', function() {
+// Before our tests run, we activate the server. Our `runServer`
+// function returns a promise, and we return the promise by
+// doing `return runServer`. If we didn't return a promise here,
+// there's a possibility of a race condition where our tests start
+// running before our server has started.
+before(function() {
+return runServer();
+});
+
+// Close server after these tests run in case
+// we have other test modules
+after(function() {
+return closeServer();
+});
+
+
+function runServer() {
+const port = process.env.PORT || 8080;
+return new Promise((resolve, reject) => {
+server = app.listen(port, () => {
+console.log(`Your app is listening on port ${port}`);
+resolve(server);
+})
+.on('error', err => {
+reject(err);
+});
+});
+}
+
+//... closeServer defined here
+
+if (require.main === module) {
+runServer().catch(err => console.error(err));
+};
