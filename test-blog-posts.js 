@@ -1,0 +1,20 @@
+<!--
+Add integration tests for all 4 of the API endpoints.
+The integration tests should use the strategy described (
+1-set up db in known state
+2-make a request to API
+3-inspect response
+4-inspect state of db, tear down db).
+Write tests for the normal case for each endpoint.
+-->
+
+
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+
+const {app, closeServer, runServer} = require('../server');
+
+const should = chai.should();
+
+chai.use(chaiHttp);
+
