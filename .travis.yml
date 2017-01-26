@@ -2,3 +2,10 @@ language: node_js
 node_js: node
 services:
 - mongodb
+deploy: pure-mountain-14246
+  provider: heroku
+  api_key:
+    secure: hO+nK2UcwdVZBQ1FsyYZ0ivwdm0nrPH0Fhpn+2P4g6PcOUAFx0ptVSd60uVNz/HtmxCcEhZgZn0rUeEQBGN1xax8DPNSfyCUQDHlMSS9OABXO2xmw+7FpC1PL9MUa4KwnfsV79w/Uf8lIT0kaB1frA3frlC6tscN4Pt02P14ZL7JPzU6+PG92Tmx+O7YiKIja6TJVhhkF2Rgcm4ylqKcGUCdxZhsRj7aBwUeMl4G/WJH1agAhfO6sc/ml9xZGb9SouGVTRxtzm+x3Bt59o/YU5YNmrWTNQ+67XFPhTQGspx0bw1ePbAsHol5Xq9vgAiXUP/hTjWZyl1EsEm2qHORtXbQEMQtRlJr1KtnQFncPh+S7z4FAM2Imje4Z9CqVZuCi4H04kwkopTZE5dVH9UnOzMExnO/X7IH5FY7D4/8bQFO8LxY8hBVn1J1TKIdZOl4JnnRtyp2l0gjEfrZaP/WigCtvCcaxQI9igqGCJZ23pkQOYixjXHl0eMPJiRiwW/+AByTBlhLIg5376cvksAyY/WexmJF6oJz0R2VGwTt39l78HOrtMFUPNMquJNbVtq0SDB1VFoMIDj229kb6Kcek368rlJTOf1g2rgaq6TfBVt0zZcAonyiKgtnIrKNdSAS8Pe359DkSbGliJD76AS9VWpfRMmz0+zP11CVoCNTWBY=
+  app: blog-app-mongoose-challenge-solution
+  on:
+    repo: marogef/blog-app-mongoose-challenge-solution
